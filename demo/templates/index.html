@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Application</title>
+</head>
+<body>
+<h1>{{info.title}} </h1>
+This application is used to demonstrate how to use Django to build web apps.
+<p/>
+Version : {{ info.version }}
+
+<h3>Topics</h3>
+The following are important topcis:
+
+<ul>
+  {% for t in info.topics %}
+       <li>{{t}}</li>
+  {% endfor %}
+</ul>
+<hr/>
+Time : {{now}}
+</body>
+</html>
