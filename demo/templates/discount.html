@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discount Calculation</title>
+    <style>
+        .error { color :red; font-weight:bold}
+    </style>
+</head>
+<body>
+<h1>Discount Calculation</h1>
+<form action=""  method="post">
+    {% csrf_token %}
+    Amount <br/>
+    <input type="number" name="amount" value="{{amount}}"   />
+    <p/>
+    Discount % <br/>
+    <input type="number" name="rate" value="{{rate}}"  required="required" />
+    <p/>
+    <input type="submit" value="Calculate" />
+    <p/>
+    {% if discount > 0 %}
+    <h3>Discount = {{ discount }} </h3>
+    {% endif %}
+
+    <div class="error">{{message}}</div>
+</form>
+
+</body>
+</html>
