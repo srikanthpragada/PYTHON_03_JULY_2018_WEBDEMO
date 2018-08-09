@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Of Departments</title>
+    <script>
+        function  deleteConfirm() {
+
+        }
+    </script>
+</head>
+<body>
+<h2>List Of Departments</h2>
+
+<table border="1" width="100%">
+    <tr>
+        <th>Department Id</th>
+        <th>Department Name</th>
+        <th>Department Location</th>
+        <th></th>
+    </tr>
+
+    {%for dept in depts%}
+       <tr>
+           <td> {{ dept.0 }} </td>
+           <td> {{ dept.1 }} </td>
+           <td> {{ dept.2 }} </td>
+           <td> <a href="/demo/deletedept?deptid={{dept.0}}">Delete</a></td>
+       </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

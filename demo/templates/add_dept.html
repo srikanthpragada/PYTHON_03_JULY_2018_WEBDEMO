@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Dept</title>
+    <style>
+        .info { color : blue ; font-weight:bold}
+    </style>
+</head>
+<body>
+<h1>Add Dept</h1>
+<form action=""  method="post">
+    {% csrf_token %}
+    Dept Name  <br/>
+    <input type="text" name="deptname" value="{{deptname}}"  required="required"  />
+    <p/>
+    Location <br/>
+    <input type="text" name="location" value="{{location}}"  required="required" />
+    <p/>
+    <input type="submit" value="Add Dept" />
+    <p/>
+
+    <div class="info">{{message}}</div>
+</form>
+
+<a href="/demo/listdept">List Departments</a>
+
+</body>
+</html>

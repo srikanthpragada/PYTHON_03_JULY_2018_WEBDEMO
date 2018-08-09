@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Info
 from datetime import datetime
 from django.http import HttpResponse
+import requests
 
 
 def index(request):
@@ -30,5 +31,11 @@ def discount(request):
                   {'discount': discount,
                    'amount': amount,
                    'rate': rate,
-                   'message' : message}
-                 )
+                   'message': message}
+                  )
+
+
+def list_countries(request):
+    resp = requests.get("https://restcountries.eu/rest/v2/all")
+    countries = resp.json()
+    return render(request, 'list_countries.html', {'countries': countries})
