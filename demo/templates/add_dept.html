@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add Dept</title>
-    <style>
-        .info { color : blue ; font-weight:bold}
-    </style>
-</head>
-<body>
-<h1>Add Dept</h1>
+{% extends "dept_master.html" %}
+
+{% block title %}
+Add Department
+{% endblock %}
+
+{%block content %}
 <form action=""  method="post">
     {% csrf_token %}
     Dept Name  <br/>
@@ -23,7 +19,4 @@
     <div class="info">{{message}}</div>
 </form>
 
-<a href="/demo/listdept">List Departments</a>
-
-</body>
-</html>
+{% endblock %}

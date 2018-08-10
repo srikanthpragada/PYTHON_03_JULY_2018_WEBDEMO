@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Departments</title>
+    <link href='{% static "styles.css" %}' rel="stylesheet" />
+</head>
+<body>
+<div class="banner">Departments</div>
+<div class="menu">
+    [<a href="/demo/adddept">Add Department</a>]
+    &nbsp;
+    [<a href="/demo/listdept">List Departments</a>]
+    &nbsp;
+    [<a href="/demo/searchdept">Search Departments</a>]
+</div>
+<h2>{% block title %}{% endblock %}</h2>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

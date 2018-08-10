@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>List Of Departments</title>
-    <script>
-        function  deleteConfirm() {
+{% extends "dept_master.html" %}
 
-        }
-    </script>
-</head>
-<body>
-<h2>List Of Departments</h2>
+{% block title %}
+List Departments
+{% endblock %}
+
+{%block content %}
 
 <table border="1" width="100%">
     <tr>
@@ -29,5 +23,5 @@
        </tr>
     {% endfor %}
 </table>
-</body>
-</html>
+
+{% endblock %}

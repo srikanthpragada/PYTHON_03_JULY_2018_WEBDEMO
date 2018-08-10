@@ -17,8 +17,8 @@
 
     {%for c in countries %}
        <tr>
-           <td> {{ c.name }} </td>
-           <td> {{ c.capital }} </td>
+           <td> {{ c.name | upper }} </td>
+           <td> {{ c.capital | capfirst }} </td>
            <td> {{ c.population }} </td>
            <td> <img src="{{c.flag}}"  width="200px" height="100px" />
        </tr>
