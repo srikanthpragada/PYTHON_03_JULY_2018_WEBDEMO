@@ -1,6 +1,6 @@
 
 from django.urls import path
-from . import views, hr_views
+from . import views, hr_views, form_views
 
 urlpatterns = [
     path('index/', views.index),
@@ -9,4 +9,5 @@ urlpatterns = [
     path('listdept/', hr_views.list_dept),
     path('deletedept/', hr_views.delete_dept),
     path('countries/', views.list_countries),
+    path('adddeptform/', form_views.add_dept),
 ]
