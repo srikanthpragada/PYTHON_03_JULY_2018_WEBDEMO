@@ -1,8 +1,14 @@
 from django.shortcuts import render
-from .models import Info
 from datetime import datetime
 from django.http import HttpResponse
 import requests
+
+
+class Info:
+    def __init__(self):
+        self.title = "Demo Application"
+        self.version = "2.1"
+        self.topics = ["Views", "Templates", "Forms", "ORM", "Ajax", "Rest API"]
 
 
 def index(request):
