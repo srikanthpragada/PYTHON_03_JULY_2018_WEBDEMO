@@ -1,0 +1,30 @@
+{% extends 'course/master.html' %}
+
+{% block title%}
+List Of Courses
+{% endblock %}
+
+{% block content%}
+<table border="1" width="100%">
+    <tr>
+        <th>Code</th>
+        <th>Title</th>
+        <th>Duration (Hours)</th>
+        <th>Fee (INR)</th>
+        <th></th>
+    </tr>
+
+    {%for c in courses %}
+       <tr>
+           <td> {{ c.code }} </td>
+           <td> {{ c.title | capfirst }} </td>
+           <td> {{ c.duration }} </td>
+           <td> {{ c.fee }} </td>
+           <td>
+               <a href="/demo/edit_course/{{ c.code }}">Edit</a>
+               <a href="/demo/delete_course/{{ c.code }}">Delete</a>
+           </td>
+       </tr>
+    {% endfor %}
+</table>
+{% endblock %}

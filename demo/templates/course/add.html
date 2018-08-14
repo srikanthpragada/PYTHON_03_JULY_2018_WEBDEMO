@@ -1,0 +1,18 @@
+{% extends "course/master.html" %}
+
+{% block title %}
+Add Course
+{% endblock %}
+
+{%block content %}
+<form action=""  method="post">
+    {% csrf_token %}
+    <table>
+    {{form}}
+    </table>
+    <p/>
+    <input type="submit" value="Add Course" />
+    <div class="info">{{message}}</div>
+</form>
+
+{% endblock %}
