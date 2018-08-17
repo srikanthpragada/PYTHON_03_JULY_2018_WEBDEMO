@@ -1,6 +1,6 @@
 
 from django.urls import path
-from . import views, hr_views, form_views, course_views, cookie_views
+from . import views, hr_views, form_views, course_views, cookie_views, session_views
 
 urlpatterns = [
     path('index/', views.index),
@@ -14,5 +14,10 @@ urlpatterns = [
     path('course_add/', course_views.add),
     path('add_cookie/', cookie_views.add_cookie),
     path('list_cookies/', cookie_views.list_cookies),
+    path('sessions/', session_views.add_key),
+    path('list_keys/', session_views.list_keys),
+    path('movies/', cookie_views.list_movies),
+    path('selectcity/', cookie_views.select_city),
+    path('savecity/', cookie_views.save_city),
 
 ]

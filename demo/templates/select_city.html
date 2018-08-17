@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select City</title>
+</head>
+<body>
+
+<form action="/demo/savecity">
+    Select Your City :
+    <select name="city">
+        {%for c in cities%}
+           <option value="{{c}}">{{c}}</option>
+        {%endfor%}
+    </select>
+    <p/>
+    <input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>
