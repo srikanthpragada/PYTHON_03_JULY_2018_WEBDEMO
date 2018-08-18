@@ -1,4 +1,4 @@
-from django.forms import Form, CharField, BooleanField, Textarea
+from django.forms import Form, CharField, BooleanField, Textarea, PasswordInput
 
 
 class AddDeptForm(Form):
@@ -7,3 +7,8 @@ class AddDeptForm(Form):
     # feedback = CharField(label='Feedback', widget=Textarea)
     # onsite = BooleanField(label='On Site?')
 
+
+class LoginForm(Form):
+    username = CharField(max_length=10, label='Username')
+    password = CharField(max_length=10, label='Password',
+                         widget= PasswordInput)

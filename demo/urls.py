@@ -1,6 +1,8 @@
 
 from django.urls import path
 from . import views, hr_views, form_views, course_views, cookie_views, session_views
+from . import class_views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('index/', views.index),
@@ -19,5 +21,9 @@ urlpatterns = [
     path('movies/', cookie_views.list_movies),
     path('selectcity/', cookie_views.select_city),
     path('savecity/', cookie_views.save_city),
+    # path('classview1/', class_views.ClassView1.as_view()),
+    path('classview1/', TemplateView.as_view( template_name = 'class_view1.html')),
+    path('login/', class_views.LoginView.as_view()),
+    path('courses/', class_views.ListCourseView.as_view()),
 
 ]
