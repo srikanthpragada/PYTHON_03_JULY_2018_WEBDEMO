@@ -1,7 +1,7 @@
 
 from django.urls import path
 from . import views, hr_views, form_views, course_views, cookie_views, session_views
-from . import class_views
+from . import class_views, ajax_views
 from django.views.generic import TemplateView
 
 urlpatterns = [
@@ -25,5 +25,7 @@ urlpatterns = [
     path('classview1/', TemplateView.as_view( template_name = 'class_view1.html')),
     path('login/', class_views.LoginView.as_view()),
     path('courses/', class_views.ListCourseView.as_view()),
+    path('ajax_now/', ajax_views.now),
+    path('ajax_index/', ajax_views.index),
 
 ]
