@@ -1,0 +1,65 @@
+{% extends 'course/master.html' %}
+
+{% block title%}
+Search Courses
+{% endblock %}
+
+{% block content%}
+ <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+ </script>
+ <script>
+     function search()
+     {
+         $("#error").css("visibility","hidden");
+         $("#courses").css("visibility","hidden");
+
+         title = $("#title").val()
+         $.getJSON("/demo/search_courses/?title=" + title,{}, showCourses);
+     }
+
+     function showCourses(courses)
+     {
+       // console.log(courses);
+       if (courses.length == 0)
+           $("#error").css("visibility","visible");
+       else
+       {
+          $("#data").html("");  // clear rows from body
+
+          $.each(courses,
+                 function(idx,c) {
+                      output = "<tr><td>" + c.code + "</td><td>" +
+                                c.title + "</td><td>" + c.duration + "</td><td>" +
+                                c.fee + "</td></tr>";
+                      $("#data").append(output);
+                 }
+           );
+
+           $("#courses").css("visibility","visible");
+
+       }
+
+     }
+ </script>
+
+ Title : <input type="text" id="title"/>
+ <button onclick="search()">Search</button>
+<p></p>
+<div id="error" style="visibility:hidden">Sorry! No course found!</div>
+
+<table border="1" id="courses" style="visibility:hidden;width:100%">
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Title</th>
+        <th>Duration (Hours)</th>
+        <th>Fee (INR)</th>
+    </tr>
+    </thead>
+    <tbody id="data">
+
+    </tbody>
+</table>
+{% endblock %}

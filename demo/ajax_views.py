@@ -9,5 +9,5 @@ def index(request):
 
 
 def now(request):
-    time.sleep(10)
+    # time.sleep(10)
     return HttpResponse(str(datetime.datetime.now()))

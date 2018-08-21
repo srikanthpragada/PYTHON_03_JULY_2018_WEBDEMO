@@ -13,6 +13,8 @@ urlpatterns = [
     path('countries/', views.list_countries),
     path('adddeptform/', form_views.add_dept),
     path('course_list/', course_views.list),
+    path('course_search/', course_views.search),
+    path('search_courses/', course_views.search_courses),
     path('course_add/', course_views.add),
     path('add_cookie/', cookie_views.add_cookie),
     path('list_cookies/', cookie_views.list_cookies),

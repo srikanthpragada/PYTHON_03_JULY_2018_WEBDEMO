@@ -11,11 +11,11 @@
     <script>
         function getNow() {
            // make AJAX request for /demo/ajax_now
-           $.get("/demo/ajax_now",{}, showNow);
+           $.get("/demo/ajax_now",{}, showNow);   // url,data,success_callback
         }
         function showNow(response)
         {
-            $("#now").html(response);
+            $("#now").text(response);
         }
     </script>
 </head>
