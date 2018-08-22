@@ -1,6 +1,6 @@
 
-from django.urls import path
-from . import views, hr_views, form_views, course_views, cookie_views, session_views
+from django.urls import path, re_path
+from . import views, hr_views, form_views, course_views, cookie_views, session_views, rest_courses
 from . import class_views, ajax_views
 from django.views.generic import TemplateView
 
@@ -29,5 +29,8 @@ urlpatterns = [
     path('courses/', class_views.ListCourseView.as_view()),
     path('ajax_now/', ajax_views.now),
     path('ajax_index/', ajax_views.index),
+    path('rest_courses/', rest_courses.list_courses),
+    re_path('rest_courses/(?P<code>\w+)/$', rest_courses.course_details),
+
 
 ]
