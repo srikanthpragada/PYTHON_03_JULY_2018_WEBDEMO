@@ -31,6 +31,7 @@ urlpatterns = [
     path('ajax_index/', ajax_views.index),
     path('rest_courses/', rest_courses.list_courses),
     re_path('rest_courses/(?P<code>\w+)/$', rest_courses.course_details),
+    path('rest_client/', rest_courses.client),
 
 
 ]

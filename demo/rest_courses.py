@@ -2,12 +2,17 @@ from rest_framework import serializers
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Course
+from django.shortcuts import render
 
 
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
         fields = ('code', 'title', 'duration', 'fee')
+
+
+def client(request):
+    return render(request,"rest_client.html")
 
 
 @api_view(['GET','POST'])
